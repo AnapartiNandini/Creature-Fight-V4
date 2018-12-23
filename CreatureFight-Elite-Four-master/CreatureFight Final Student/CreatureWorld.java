@@ -4,7 +4,7 @@
  * Name: Nandini Anaparti
  * Course: Software Development
  * Teacher: Mr.Scott Hardman
- * Date Last Modified: 12//2018
+ * Date Last Modified: 12/23/2018
  */
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
