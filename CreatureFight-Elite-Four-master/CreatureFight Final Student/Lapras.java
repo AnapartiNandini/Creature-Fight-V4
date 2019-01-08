@@ -66,7 +66,7 @@ public class Lapras extends Creature
             Greenfoot.delay(30);
             
             //TODO (142): If the current health of the health bar of the new two creature at index 0 in player world is greater than 0...
-            if( playerWorld.getNewTwoCreature(0).getHealthBar().getCurrent() > 0 )
+            if( playerWorld.getNewTwoCreature(1).getHealthBar().getCurrent() > 0 )
             {
                 //TODO (143): Call the switchCreature method using a value of 0 as the parameter
                 switchCreature(0);
@@ -140,7 +140,7 @@ public class Lapras extends Creature
             else if(enemyType == "Rock")
             {
                 //Should do two times 100 points of damage
-                enemy.getHealthBar().add(2*100);
+                enemy.getHealthBar().add(-100*2);
                 
                 /**
                  * Show text that states the attack was super effective at a x location of half the width of the world 
@@ -274,7 +274,7 @@ public class Lapras extends Creature
         CreatureWorld playerWorld = (CreatureWorld)getWorld();
         
         //Declare a local Creature variable called switchCreature that is initialized to get a new player one creature using the idx parameter
-        Creature switchCreature = playerWorld.getNewOneCreature(idx);
+        Creature switchCreature = playerWorld.getNewTwoCreature(idx);
         
         //If the current health of the health bar of the switchCreature is less than or equal to 0...
         if ( switchCreature.getHealthBar().getCurrent() <= 0 )

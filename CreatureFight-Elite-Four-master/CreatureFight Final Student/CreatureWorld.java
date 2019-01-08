@@ -4,7 +4,7 @@
  * Name: Nandini Anaparti
  * Course: Software Development
  * Teacher: Mr.Scott Hardman
- * Date Last Modified: 12/23/2018
+ * Date Last Modified: 1/8/2019
  */
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
@@ -112,14 +112,14 @@ public class CreatureWorld extends World
         if( playerOneMenusAdded == false )
         {
             //TODO (95): If playerOneCreature equals (ignoring case) "Charmander"...
-            if(playerOneCreature == "Charmander")
+            if(playerOneCreature.equalsIgnoreCase("Charmander"))
             {
                 //TODO (96): Place the oneFightMenu and oneSwitchMenu initializations for Charmander inside this if statement
                 oneFightMenu = new Menu(" Fight ", " Scratch \n Flamethrower ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
                 oneSwitchMenu = new Menu(" Switch ", " Golem \n Ivysaur ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new SwitchCommands());                
             }
             //TODO (97): Otherwise, if playerOneCreature equals (ignoring case) "Golem"...
-            else if(playerOneCreature == "Charmander")
+            else if(playerOneCreature.equalsIgnoreCase("Golem"))
             {
                 //TODO (98): Set oneFightMenu to a new Fight menu that has options for Tackle and Earthquake
                 oneFightMenu = new Menu(" Fight ", " Tackle \n Earthquake ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
@@ -131,14 +131,12 @@ public class CreatureWorld extends World
             else
             {
                 //TODO (101): Set oneFightMenu to a new Fight menu that has options for Tackle and Razor Leaf
-                oneFightMenu = new Menu(" Fight ", " Tackle \n Razor ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
+                oneFightMenu = new Menu(" Fight ", " Tackle \n Razor Leaf ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
                 
                 //TODO (102): Set oneSwitchMenu to a new Switch menu that has options to change to Charmander or Golem
                 oneSwitchMenu = new Menu(" Switch ", " Charmander \n Golem ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new SwitchCommands());
             }
-            oneFightMenu = new Menu(" Fight ", " Scratch \n Flamethrower ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
-            oneSwitchMenu = new Menu(" Switch ", " Golem \n Ivysaur ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new SwitchCommands());
-
+            
             addObject(oneFightMenu, 173, getHeight() - 100 );
             addObject(oneSwitchMenu, 241, getHeight() - 100);
             
@@ -148,7 +146,7 @@ public class CreatureWorld extends World
         if( playerTwoMenusAdded == false )
         {
             //TODO (168): If playerTwoCreature equals (ignoring case) "Pikachu"...
-            if(playerTwoCreature == "Pikachu")
+            if(playerTwoCreature.equalsIgnoreCase("Pikachu"))
             {
                 //TODO (169): Place the twoFightMenu and twoSwitchMenu initializations for Pikachu inside this if statement
                 twoFightMenu = new Menu(" Fight ", " Tackle \n Thunderbolt ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
@@ -156,7 +154,7 @@ public class CreatureWorld extends World
             }
             
             //TODO (170): Otherwise, if playerTwoCreature equals (ignoring case) "Lapras"...
-            else if(playerTwoCreature == "Lapras")
+            else if(playerTwoCreature.equalsIgnoreCase("Lapras"))
             {
                 //TODO (171): Set twoFightMenu to a new Fight menu that has options for Tackle and Hydro Pump
                 twoFightMenu = new Menu(" Fight ", " Tackle \n Hydro Pump ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
@@ -174,8 +172,7 @@ public class CreatureWorld extends World
                 //TODO (175): Set twoSwitchMenu to a new Switch menu that has options to change to Pikachu or Golem
                 twoSwitchMenu = new Menu(" Switch ", " Pikachu \n Golem ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new SwitchCommands());
             }
-            twoFightMenu = new Menu(" Fight ", " Tackle \n Thunderbolt ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new FightCommands());
-            twoSwitchMenu = new Menu(" Switch ", " Lapras \n Pidgeot ", 24, Color.BLACK, Color.WHITE, Color.BLACK, Color.WHITE, new SwitchCommands());
+            
             
             addObject(twoFightMenu, 131, 75);
             addObject(twoSwitchMenu, 199, 75);
@@ -306,13 +303,13 @@ public class CreatureWorld extends World
         Creature currentPlayerOne = null;
 
         //TODO (88): If playerOneCreature equals (ignoring case) Charmander...
-        if(playerOneCreature == "Charmander")
+        if(playerOneCreature.equalsIgnoreCase("Charmander"))
         {
             //TODO (89): Initialize currentPlayerOne to the first element of the playerOneCreatures array
             currentPlayerOne = playerOneCreatures[0];
         }
         //TODO (90): If playerOneCreature equals (ignoring case) Golem...
-        else if(playerOneCreature == "Golem")
+        else if(playerOneCreature.equalsIgnoreCase("Golem"))
         {
             //TODO (91): Initialize currentPlayerOne to the second element of the playerOneCreatures array
             currentPlayerOne = playerOneCreatures[1];
@@ -342,13 +339,13 @@ public class CreatureWorld extends World
         Creature currentPlayerTwo = null;
 
         //TODO (161): If playerTwoCreature equals (ignoring case) Pikachu...
-        if(playerTwoCreature == "Pikachu")
+        if(playerTwoCreature.equalsIgnoreCase("Pikachu"))
         {
             //TODO (162): Initialize currentPlayerTwo to the first element of the playerTwoCreatures array
             currentPlayerTwo = playerTwoCreatures[0];
         }
         //TODO (163): If playerTwoCreature equals (ignoring case) Lapras...
-        else if(playerTwoCreature == "Lapras")
+        else if(playerTwoCreature.equalsIgnoreCase("Lapras"))
         {
             //TODO (164): Initialize currentPlayerTwo to the second element of the playerTwoCreatures array
             currentPlayerTwo = playerTwoCreatures[1];

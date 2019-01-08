@@ -75,7 +75,7 @@ public class Pidgeot extends Creature
                 getWorld().removeObject(this);  
             }
             //TODO (147): Otherwise, if the current health of the health bar of the new two creature at index 2 in player world is greater than 0...
-            else if(playerWorld.getNewTwoCreature(1).getHealthBar().getCurrent() > 0)
+            else if(playerWorld.getNewTwoCreature(2).getHealthBar().getCurrent() > 0)
             {
                 //TODO (148): Call the switchCreature method using a value of 2 as the parameter
                 switchCreature(1);
@@ -134,7 +134,7 @@ public class Pidgeot extends Creature
             else if(enemyType == "Rock")
             {
                 //Should do half of 55 points of damage
-                enemy.getHealthBar().add(55/2);
+                enemy.getHealthBar().add(-55/2);
                 
                 /**
                  * Show text that states the attack was not very effective at a x location of half the width of the world 
@@ -253,7 +253,7 @@ public class Pidgeot extends Creature
         CreatureWorld playerWorld = (CreatureWorld)getWorld();
         
         //Declare a local Creature variable called switchCreature that is initialized to get a new player one creature using the idx parameter
-        Creature switchCreature = playerWorld.getNewOneCreature(idx);
+        Creature switchCreature = playerWorld.getNewTwoCreature(idx);
         
         //If the current health of the health bar of the switchCreature is less than or equal to 0...
         if ( switchCreature.getHealthBar().getCurrent() <= 0 )

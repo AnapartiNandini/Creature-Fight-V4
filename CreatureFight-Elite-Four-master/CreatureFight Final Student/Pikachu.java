@@ -36,7 +36,7 @@ public class Pikachu extends Creature
             Greenfoot.delay(30);
             
             //TODO (142): If the current health of the health bar of the new two creature at index 1 in player world is greater than 0...
-            if( playerWorld.getNewTwoCreature(1).getHealthBar().getCurrent() > 0 )
+            if( playerWorld.getNewTwoCreature(0).getHealthBar().getCurrent() > 0 )
             {
                 //TODO (143): Call the switchCreature method using a value of 1 as the parameter
                 switchCreature(1);
@@ -51,7 +51,7 @@ public class Pikachu extends Creature
                 getWorld().removeObject(this);  
             }
             //TODO (147): Otherwise, if the current health of the health bar of the new two creature at index 2 in player world is greater than 0...
-            else if(playerWorld.getNewTwoCreature(2).getHealthBar().getCurrent() > 0)
+            else if(playerWorld.getNewTwoCreature(1).getHealthBar().getCurrent() > 0)
             {
                 //TODO (148): Call the switchCreature method using a value of 2 as the parameter
                 switchCreature(2);
@@ -110,7 +110,7 @@ public class Pikachu extends Creature
             if(enemyType == "Grass")
             {
                 //TODO (115): The enemy only receives half damage of the normal attack (65 points). DON'T DO THE MATH! Just type the mathematical expression you would use
-                enemy.getHealthBar().add(65/2);
+                enemy.getHealthBar().add(-65/2);
                 
                 /**
                  * TODO (116): Show text that states the attack was not very effective at a x location of half the width of the world 
@@ -229,7 +229,7 @@ public class Pikachu extends Creature
         CreatureWorld playerWorld = (CreatureWorld)getWorld();
         
         //Declare a local Creature variable called switchCreature that is initialized to get a new player one creature using the idx parameter
-        Creature switchCreature = playerWorld.getNewOneCreature(idx);
+        Creature switchCreature = playerWorld.getNewTwoCreature(idx);
         
         //If the current health of the health bar of the switchCreature is less than or equal to 0...
         if ( switchCreature.getHealthBar().getCurrent() <= 0 )

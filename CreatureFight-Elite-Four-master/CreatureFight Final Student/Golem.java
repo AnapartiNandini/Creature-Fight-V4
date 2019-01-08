@@ -65,35 +65,34 @@ public class Golem extends Creature
             //TODO (68): If the current health of the health bar of the new one creature at index 1 in player world is greater than 0...
             if( playerWorld.getNewOneCreature(0).getHealthBar().getCurrent() > 0 )
             {
-               //TODO (69): Call the switchCreature method using a value of 0 as the parameter
-               switchCreature(0);     
-                        
-               //TODO (70): Set the turn number in player world to 1
-               playerWorld.setTurnNumber(1);    
-                        
-               //TODO (71): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
-               getWorld().showText(" ",  getWorld().getWidth()/2, getWorld().getHeight()/2 + 26 );    
-                        
-               //TODO (72): Remove this object from the world
-               getWorld().removeObject(this);   
-                
-               //TODO (73): Otherwise, if the current health of the health bar of the new one creature at index 2 in player world is greater than 0...
-               if( playerWorld.getNewOneCreature(2).getHealthBar().getCurrent() > 0 )
-               {
-                
-                   //TODO (74): Call the switchCreature method using a value of 2 as the parameter
-                   switchCreature(2);
-                    
-                   //TODO (75): Set the turn number in player world to 1
-                   playerWorld.setTurnNumber(2);
-                    
-                   //TODO (76): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
-                   getWorld().showText(" ", getWorld().getWidth()/2, getWorld().getHeight()/2 + 26);
-                    
-                   //TODO (77): Remove this object from the world
-                   getWorld().removeObject(this);  
-               }
+                //TODO (69): Call the switchCreature method using a value of 0 as the parameter
+                switchCreature(0);     
+                           
+                //TODO (70): Set the turn number in player world to 1
+                playerWorld.setTurnNumber(1);    
+                            
+                //TODO (71): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
+                getWorld().showText(" ",  getWorld().getWidth()/2, getWorld().getHeight()/2 + 26 );    
+                            
+                //TODO (72): Remove this object from the world
+                getWorld().removeObject(this);   
             }
+               
+            //TODO (73): Otherwise, if the current health of the health bar of the new one creature at index 2 in player world is greater than 0...
+            else if( playerWorld.getNewOneCreature(2).getHealthBar().getCurrent() > 0 )
+            {
+                //TODO (74): Call the switchCreature method using a value of 2 as the parameter
+                switchCreature(2);
+                    
+                //TODO (75): Set the turn number in player world to 1
+                playerWorld.setTurnNumber(1);
+                    
+                //TODO (76): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
+                getWorld().showText(" ", getWorld().getWidth()/2, getWorld().getHeight()/2 + 26);
+                    
+                //TODO (77): Remove this object from the world
+                getWorld().removeObject(this);  
+            }            
         }
       }
   
@@ -125,7 +124,7 @@ public class Golem extends Creature
            if ( enemyType == "Electric" )
             {
              //Should do two times 75 points of damage (DON'T DO THE MATH! Write the math expression)
-             enemy.getHealthBar().add( 75*2 );
+             enemy.getHealthBar().add( -75*2 );
              
              /**
               * TODO (42): Show text that states the attack was not very effective at a x location of half the width of the world 
@@ -290,10 +289,10 @@ public class Golem extends Creature
           getHealthBar().getImage().setTransparency(0);
           
           //If idx is equal to 1...
-          if( idx == 1)
+          if( idx == 0)
           {
-             //Change player one in playerWorld to Golem
-             playerWorld.changePlayerOne("Golem"); 
+             //Change player one in playerWorld to Charmander
+             playerWorld.changePlayerOne("Charmander"); 
           }
           
           //Otherwise...
@@ -301,13 +300,13 @@ public class Golem extends Creature
           {
              //Change player one in playerWorld to Ivysaur
              playerWorld.changePlayerOne("Ivysaur"); 
-             
-             //Call the switchedIn method of switchCreature
-             switchCreature.switchedIn();
-             
-             //Set turn number in playerWorld to 2
-             (playerWorld).setTurnNumber(2);
           }
+          //Call the switchedIn method of switchCreature
+          switchCreature.switchedIn();
+             
+          //Set turn number in playerWorld to 2
+          (playerWorld).setTurnNumber(2);
+          
         }
     }
 

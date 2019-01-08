@@ -38,34 +38,33 @@ public class Charmander extends Creature
             //TODO (68): If the current health of the health bar of the new one creature at index 1 in player world is greater than 0...
             if( playerWorld.getNewOneCreature(1).getHealthBar().getCurrent() > 0 )
             {
-               //TODO (69): Call the switchCreature method using a value of 1 as the parameter
-               switchCreature(1);     
+                //TODO (69): Call the switchCreature method using a value of 1 as the parameter
+                switchCreature(1);     
                         
-               //TODO (70): Set the turn number in player world to 1
-               playerWorld.setTurnNumber(1);    
+                //TODO (70): Set the turn number in player world to 1
+                playerWorld.setTurnNumber(1);    
                         
-               //TODO (71): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
-               getWorld().showText(" ",  getWorld().getWidth()/2, getWorld().getHeight()/2 + 26 );    
+                //TODO (71): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
+                getWorld().showText(" ",  getWorld().getWidth()/2, getWorld().getHeight()/2 + 26 );    
                         
-               //TODO (72): Remove this object from the world
-               getWorld().removeObject(this);   
-                
-               //TODO (73): Otherwise, if the current health of the health bar of the new one creature at index 2 in player world is greater than 0...
-               if( playerWorld.getNewOneCreature(2).getHealthBar().getCurrent() > 0 )
-               {
-                
-                   //TODO (74): Call the switchCreature method using a value of 2 as the parameter
-                   switchCreature(2);
+                //TODO (72): Remove this object from the world
+                getWorld().removeObject(this);   
+            }
+            //TODO (73): Otherwise, if the current health of the health bar of the new one creature at index 2 in player world is greater than 0...
+            else if( playerWorld.getNewOneCreature(2).getHealthBar().getCurrent() > 0 )
+            {
+                //TODO (74): Call the switchCreature method using a value of 2 as the parameter
+                switchCreature(2);
                     
-                   //TODO (75): Set the turn number in player world to 1
-                   playerWorld.setTurnNumber(2);
+                //TODO (75): Set the turn number in player world to 1
+                playerWorld.setTurnNumber(1);
+                   
+                //TODO (76): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
+                getWorld().showText(" ", getWorld().getWidth()/2, getWorld().getHeight()/2 + 26);
                     
-                   //TODO (76): Clear the text (using an empty String, "") at the location that it stated Charmander had fainted
-                   getWorld().showText(" ", getWorld().getWidth()/2, getWorld().getHeight()/2 + 26);
-                    
-                   //TODO (77): Remove this object from the world
-                   getWorld().removeObject(this);  
-               }
+                //TODO (77): Remove this object from the world
+                getWorld().removeObject(this);  
+               
             }
          }
       }
@@ -292,10 +291,11 @@ public class Charmander extends Creature
     public void switchedIn()
     {
       //Set the transparency of the image of Charmander and the transparency of the image of the health bar to full
-      getImage().setTransparency(100);
+      getImage().setTransparency(255);
+      getHealthBar().getImage().setTransparency(255);
       
       //Declare a loop that will repeat while the x location of Charmander is less than half the width of the image of Charmander
-      while(getX() < getX()/2 )
+      while(getX() < getImage().getWidth()/2 )
         {
            //Set the location of Charmander to the current x location plus 5 and the current y location
            setLocation( getX()+5, getY() );
